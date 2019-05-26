@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    #parse("metaTagsTemp.vm")
+    #parse("cssTemp.vm")
+
+    <meta charset="UTF-8">
+    <title>Notebook</title>
+</head>
+<body >
+<div class="img">
+    <div class="container" >
+        <div class="row">
+            <header class="col">
+
+                <img onclick="returnToMainPage()" src="css/images/logo2.png" class="img-fluid" alt="Responsive image" id="logo">
+                <br>
+                <br>
+                <form class="input" action="" method="post" id="login">
+                    <input class="form-control" type="text" name="login" placeholder="טלפון" required>
+                    <br>
+                    <input class="form-control" type="password" name="pass" placeholder="סיסמה" required>
+                    <a class="forgot" href="forgotPass" >שכחתי את הסיסמה?</a>
+                </form>
+                <button class="btn btn-primary loginBtn" type="submit" form="login" formaction="login" >התחבר</button>
+
+            </header>
+        </div>
+
+    </div>
+</div>
+</div>
+    #parse("jsTemp.vm")
+
+</body>
+</html>

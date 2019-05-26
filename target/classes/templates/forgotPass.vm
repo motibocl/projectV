@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    #parse("metaTagsTemp.vm")
+    #parse("cssTemp.vm")
+
+    <meta charset="UTF-8">
+    <title>Notebook</title>
+</head>
+<body >
+<div class="img">
+    <div class="container" >
+        <div class="row">
+            <header class="col">
+
+                <img onclick="returnToMainPage()" src="css/images/logo2.png" class="img-fluid" alt="Responsive image" id="logo">
+                <br>
+                <br>
+                <form class="input" action="" method="post" id="login">
+                    <input class="form-control" type="text" name="login" placeholder="הכנס מס' טלפון">
+                    <br>
+                </form>
+                <button class="btn btn-primary loginBtn" type="submit" form="login" formaction="sendSms" >קבל סיסמא</button>
+
+            </header>
+        </div>
+
+    </div>
+</div>
+</div>
+    #parse("jsTemp.vm")
+
+</body>
+</html>

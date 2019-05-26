@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    #parse("metaTagsTemp.vm")
+    #parse("cssTemp.vm")
+
+    <title>Hourly|reports</title>
+</head>
+<body id="page1" onload="clearCache()">
+    #if($admin)
+        #parse("adminNav.vm")
+    #{else}
+        #parse("header.vm")
+    #end
+<div class="container-fluid  backButtonCon">
+    <div class="row">
+        <div class="col">
+            <button type="button" class="btn btn-sm backBtn" onclick="window.location.href = 'main.html';"><img src="css/images/backBtn.png"class="img-fluid back"> </button>
+            <button type="button" class="btn btn-sm ditalesBtn"  data-toggle="modal" data-target="#exampleModalCenter2"><img src="css/images/ditales.png"class="img-fluid back"> </button>
+
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid  specialRepCon">
+    <div class="row">
+        <div class="col">
+            <p class="speRep">דוחות נוכחות</p>
+        </div>
+    </div>
+</div>
+    #if($admin)  ##CHECKING IF ITS ADMIN FOR ADDITIONAL FEATURES.
+
+<form class="container report" >
+    <div class="row">
+
+            <div class="col-4 formRep">
+
+
+                ## <div class="form-group">
+                     <input type="number" class="form-control borColor" id="id" name="id" placeholder="מספר עובד">
+              ##   </div>
+             </div>
+                 <div class="col-4 formRep">
+
+                     ##<div class="form-group">
+                         <select class="form-control borColor" id="month" name="month" >
+                             <option value="">בחר חודש...</option>
+                             <option value="1">ינואר</option>
+                             <option value="2">פברואר</option>
+                             <option value="3">מרץ</option>
+                             <option value="4">אפריל</option>
+                             <option value="5">מאי</option>
+                             <option value="6">יוני</option>
+                             <option value="7">יולי</option>
+                             <option value="8">אוגוסט</option>
+                             <option value="9">ספטמבר</option>
+                             <option value="10">אוקטובר</option>
+                             <option value="11">נובמבר</option>
+                             <option value="12">דצמבר</option>
+                         </select>
+                     </div>
+
+                ## </div>
+
+                 <div class="col-3 formRep">
+
+
+                 ##    <div class="form-group">
+                         <input type="number" class="form-control borColor" id="year" name="year" placeholder="שנה">
+                     </div>
+               ##  </div>
+                     <div class="col-1 formRep">
+
+                  ##   <input type="submit" formaction="http://localhost:8666/reports" style="display:none"/>
+                     <button  style="margin-top:auto;" class="btn btn-primary loginBtn" onclick="f()">בחר</button>
+                     </div>
+
+             </div>
+</form>
+
+         #{else}   ##if its not admin
+         <form class="container report" >
+         <div class="row">
+        <div class="col-6 formRep">
+
+                <div class="form-group">
+                    <select class="form-control borColor" id="exampleFormControlSelect1" name="month" >
+                        <option value="0">בחר חודש...</option>
+                        <option value="1">ינואר</option>
+                        <option value="2">פברואר</option>
+                        <option value="3">מרץ</option>
+                        <option value="4">אפריל</option>
+                        <option value="5">מאי</option>
+                        <option value="6">יוני</option>
+                        <option value="7">יולי</option>
+                        <option value="8">אוגוסט</option>
+                        <option value="9">ספטמבר</option>
+                        <option value="10">אוקטובר</option>
+                        <option value="11">נובמבר</option>
+                        <option value="12">דצמבר</option>
+                    </select>
+                </div>
+
+        </div>
+
+        <div class="col-6 formRep">
+
+
+                    <div class="form-group">
+                        <input type="number" class="form-control borColor" id="exampleFormControlInput1" name="year" placeholder="שנה">
+                    </div>
+
+                <input type="submit" formaction="http://localhost:8666/reports" style="display:none"/>
+        </div>
+
+         </div>
+</form>
+#end
+<p class="perotTitle">$employeeName</p>
+<div class="container " >
+    <div class="row rowBorder">
+
+<table>
+    #if($days.size()!=0)
+
+    #set($end =$days.size())
+    #set($stop = $end - 1)
+    #if($stop)
+    <tr>
+        <th>יום</th>
+        <th>זמן עבודה</th>
+        <th>תאריך</th>
+        <th>פירוט סה"כ</th>
+    </tr>
+    #foreach($i in [0..$stop])
+    <tr>
+
+        <td> <p class="inf">$days.get($i)</p></td>
+
+   <td> <p class="inf">$hours.get($i)</p></td>
+
+
+          <td>  <p class="inf">$dateWorked.get($i)</p></td>
+
+            <!-- Button trigger modal  -->
+                 <td>    <button type="button" class="btn  btnrep" onclick="dayDetails(id,$empId)" id="$dateWorked.get($i)" data-toggle="modal" data-target="#exampleModalCenter"><p3 style ="color:white">$hoursWorked.get($i)</p3>&nbsp;&nbsp;<img src="css/images/pencilSticker.png" class="editPic"></button></td>
+
+   </tr>
+       #end
+       #end
+    #end
+       </table>
+    </div>
+</div>
+
+            <!-- Modal for the details -->
+            <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLongTitle"></h5>
+                            <p2>פירוט זמני עבודה</p2>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+
+                        <div>
+                            <div class="form-group">
+                                <div class="container " >
+                                    <div class="row rowBorder">
+                                        <div class="col-3 infCol">
+                                                <p class="inf" id="daylist"></p>
+                                        </div>
+                                        <div class="col-3-fluid">
+                                                <p class="inf" id="hourDetail"></p>
+                                        </div>
+                                        <div class="col-3-fluid">
+                                                <p class="inf" id="dateDetail"></p>
+                                        </div>
+                                        <div class="col-2 infCol ">
+                                            <div class="col-3-fluid">
+                                                    <p class="inf" id="hoursWorkedDetails"></p>
+                                            </div>
+                            </div>
+                            <button type="button" class="close midlle" data-dismiss="modal"><img src="css/images/okBtn.png"class="img-fluid okBtnImg ok"></button>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+    #parse("jsTemp.vm")
+
+</body>
+</html>

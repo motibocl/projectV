@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    #parse("metaTagsTemp.vm")
+    #parse("cssTemp.vm")
+
+    <title>Hourly|special-report</title>
+</head>
+
+<body id="page1"onload="clearCache()">
+    #if($admin)
+        #parse("adminNav.vm")
+    #{else}
+        #parse("header.vm")
+    #end
+<div class="container-fluid  backButtonCon">
+    <div class="row">
+        <div class="col">
+            <button type="button" class="btn btn-sm backBtn" onclick="window.location.href = 'main.html';"><img src="css/images/backBtn.png"class="img-fluid back"> </button>
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid  specialRepCon">
+    <div class="row">
+        <div class="col">
+            <p class="speRep">דיווח מיוחד</p>
+        </div>
+    </div>
+</div>
+
+<div class="container report">
+    <div class="row">
+        <div class="col formRep">
+            <form>
+                <div class="form-group">
+                    <h4 style="display: inline-block;">תאריך:</h4>
+                    <input type="date" style="margin-right: 20px;" name="reasonDate">
+
+                </div>
+                <div class="form-group">
+                    <div >
+                        <h4 style="display: inline-block;">שעת כניסה:</h4>
+                        <input type="number" min="0" max="59"  name="enterMinutes">:
+                        <input type="number" min="0" max="23" name="enterHours">
+                    </div>
+                    </br>
+                    <div>
+                        <h4 style="display: inline-block;">שעת יציאה:</h4>
+                        <input type="number" min="0" max="59"  name="exitMinutes">:
+                        <input type="number" min="0" max="23"  name="exitHours">
+                    </div>
+
+                </div>
+
+                <div class="form-group">
+                    <textarea class="form-control borColor"  name="text" id="exampleFormControlTextarea1" rows="3"placeholder="סיבה"></textarea>
+                </div>
+                <div class="form-group">
+                    <button type="submit" formaction="addReason" class="btn btn-sm okBtn" ><img src="css/images/okBtn.png"class="img-fluid okBtnImg"> </button>
+                </div>
+
+            </form>
+        </div>
+
+    </div>
+</div>
+</div>
+
+
+    #parse("jsTemp.vm")
+
+</body>
+</html>
+

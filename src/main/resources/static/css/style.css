@@ -1,0 +1,336 @@
+/*--------------------landing page----------------------------------------------*/
+
+body, html {
+    height: 100%;
+    margin: 0;
+    direction: rtl;
+}
+
+.loginBtn{
+    margin-top: 3px;
+    float: left;
+    background-color: #b95c6e;
+    border-color: #b96481;
+}
+.loginBtn:hover{
+    background-color: #e07640;
+    border-color: #e07640;
+}
+.img{
+    background-image: url("images/backgroundDesk.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%;
+
+}
+
+.container{
+    text-align: center;
+}
+
+.text{
+    position: relative;
+    font-size:2vw;
+    text-align: right;
+    color: aliceblue;
+    top: 9%;
+    left: -17%;
+
+}
+#logo{
+    margin-top: 76px;
+    width: auto;
+}
+
+.input{
+    width: 100%;
+    margin-top: 20%;
+}
+
+.forgot{
+    color: aliceblue;
+    float: right;
+    margin-left: 5px;
+    font-size: 23px;
+}
+@media screen and (max-width:700px) {
+    .img {
+        background-image: url("images/backgroundMob.jpg");
+
+        /* Full height */
+        height: 100%;
+
+        /* Center and scale the image nicely */
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    .text{
+        position: relative;
+        font-size:4vw;
+        text-align: right;
+        color: aliceblue;
+        top: 9%;
+        left: -15%;
+
+    }
+}
+/*--------------------PAGE 1----------------------------------------------*/
+#page1{
+    background-color: #f2eefa;
+}
+.container-fluid{
+    background: #e8e0d9;
+}
+.page1Btn{
+    width: auto;
+    margin: auto;
+}
+.page1Logo{
+    margin: auto;
+
+}
+.mainLogo{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+.btn-secondary {
+    background-color: #e8e0d9;
+    border-color: #e8e0d9;
+}
+.btn.dropdown-toggle.pull-right{
+    max-width: 70px;
+    float: right;
+}
+.timeEnter{
+    background-color: #ef7f28;
+    height: 85px;
+    margin-top: 82px;
+}
+.enterTime{
+    margin-top: 24px;
+    color: aliceblue;
+    font-weight: 600;
+    font-size: x-large;
+
+}
+.workedDay{
+    background-color: #e07640;
+    margin-top: 185px;
+}
+.workedMonth{
+    background-color: #e07640;
+    margin-top: 2px;
+    height: 39%;
+
+}
+.date{
+    text-align: center;
+}
+
+.ent {
+    background: #e8e0d9;
+    background-color: #f2eefa;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.knisa {
+    padding: initial;
+    width: 40%;
+}
+#date{
+    color: #bf7095;
+    font-weight: 500;
+    font-size: 2.8vw;
+}
+.btnrep{
+    height: 27px;
+    background-color: #ef7f28;
+    margin-bottom: 18.5px;
+    width: max-content;
+
+}
+/*------------------------PAGE 2 (SPECIAL REPORT)--------------------------------------------------*/
+.back{
+    max-width: 73px;
+}
+.backBtn{
+    float: left;
+    margin-top: 16.5px;
+}
+.backButtonCon{
+    background-color: #ffffff;
+    height: 70px;
+}
+.speRep{
+    text-align: center;
+    font-size: x-large;
+    font-weight: 600;
+    color: white;
+    margin-top: 30px;
+}
+.specialRepCon{
+    background-color:#e07640 ;
+    height: 100px;
+}
+.formRep{
+    margin-top: 40px;
+}
+.okBtnImg{
+    max-width: 276px;
+
+    margin-top: 14%;
+    margin-right: -3%;
+}
+.okBtnImg2{
+    max-width: 276px;
+
+    margin-top: 14%;
+    margin-right: 34%;
+}
+
+/**/
+.borColor{
+    border-color: #e07640;
+}
+/*------------------------PAGE 3 (REPORTS)------------------------------------------------------------*/
+.ditalesBtn{
+    float: right;
+    margin-top: 16.5px;
+}
+.spring{
+    text-align: center;
+    font-size: x-large;
+
+}
+.inf{
+    border-color: #e07640;
+    border-style: solid;
+}
+.infCon{
+    width: 1156px;
+}
+.infCol{
+    margin: inherit;
+}
+.repImg {
+    height: 3vw;
+}
+.editPic{
+    height: 10px;
+    width: 15px;
+
+}
+.modalFit{
+    width: fit-content;
+}
+.ok{
+    width: 191px;
+    margin: auto;
+
+}
+
+.midlle{
+    width: 100%;
+    text-align: center;
+}
+/*------------------------Modal---------------*/
+.modWind {
+    width: 478px;
+    height: 400px;
+}
+
+.headStyle {
+    background-color: #e8e0d9;
+    height: 23%;
+}
+
+.fontModStyle {
+    margin-left: 35%;
+    margin-top: 25px;
+    font-size: 19px;
+    color: #e07640;
+}
+
+.inpForm1{
+    width: 99%;
+    height: 175px;
+    border: none;
+}
+.hih{
+    max-width: 55px;
+    float: right;
+
+}
+/*-----------------------ER------------------------------*/
+.sidenav {
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    right: 0;
+    background-color: white;
+    overflow-x: hidden;
+    transition: 0.2s;
+    padding-top: 60px;
+}
+
+.sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: black;
+    display: block;
+    transition: 0.3s;
+}
+
+.sidenav a:hover {
+    color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 200px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+@media screen and (max-height: 450px) {
+    .sidenav {padding-top: 15px;}
+    .sidenav a {font-size: 18px;}
+}
+.nav{
+    border-style: solid;
+    border-color: white;
+    border-bottom-color: burlywood;
+    padding-left: 0px;
+
+}
+.version{
+    text-align: center;
+    font-family: OpenSansHebrew;
+    font-weight: 400;
+    font-style: normal;
+    color: #1d1f31;
+    opacity: .6;
+    font-size: 12px;
+}
+/*----------------------------------administration-------------------------------*/
+.addEmp{
+    text-align: center;
+}
+.test{
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+.perotTitle{
+    text-align: center;
+    font-size: xx-large;
+}
